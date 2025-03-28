@@ -1,9 +1,9 @@
 ---
-title: Simple Guides for Ricky(e/acc)
+title: Simple Guides for Ricky-e-acc
 published: 2024-04-01
 description: "How to use this blog template."
 image: "./cover.jpeg"
-tags: ["Ricky(e/acc)", "Blogging", "Customization"]
+tags: ["Ricky-e-acc", "Blogging", "Customization"]
 category: Guides
 draft: false
 slug: using-this-template

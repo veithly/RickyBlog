@@ -2,9 +2,9 @@
 title: Markdown Extended Features
 published: 2024-05-01
 updated: 2024-11-29
-description: 'Read more about Markdown features in Ricky(e/acc)'
+description: 'Read more about Markdown features in Ricky-e-acc'
 image: ''
-tags: [Demo, Example, Markdown, Ricky(e/acc)]
+tags: [Demo, Example, Markdown, Ricky-e-acc]
 category: 'Examples'
 draft: false
 ---
