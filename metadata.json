@@ -1,0 +1,27 @@
+{
+  "name": "LumivoltWhisper",
+  "description": "Where Lightning Meets Light, and Magic Sparks Imagination - An IdeaPulse NFT",
+  "image": "ipfs://QmVXcVBEJrwayPJdRG5seNXTshg3Draf84igzCTVUZ2oNu",
+  "attributes": [
+    {
+      "trait_type": "Artist",
+      "value": "IdeaPulse"
+    },
+    {
+      "trait_type": "Collection",
+      "value": "IdeaPulse NFT"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Art"
+    },
+    {
+      "trait_type": "Type",
+      "value": "NFT"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ]
+}
