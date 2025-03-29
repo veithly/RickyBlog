@@ -76,31 +76,54 @@ NFT智能合约听起来很高级，但其实就像是一个固执的自动售�
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
+// 导入OpenZeppelin的ERC721URIStorage合约，它扩展了基本ERC721标准，添加了存储元数据URI的功能
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+// 导入可拥有权合约，允许我们设置合约所有者并限制某些功能只能由所有者调用
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-// Note: We're using ERC721URIStorage which already extends ERC721
-// This avoids multiple inheritance issues
+// 创建名为IdeaPulseNFT的合约，它继承自ERC721URIStorage和Ownable
+// ERC721URIStorage已经包含了ERC721的所有功能，所以不需要单独继承ERC721
 contract IdeaPulseNFT is ERC721URIStorage, Ownable {
+    // 私有变量，用于跟踪下一个要铸造的NFT的ID
     uint256 private _nextTokenId;
+
+    // 公开变量，存储NFT元数据的基本URI地址
+    // 这里使用的是IPFS地址，确保元数据永久可用且不可变
     string public baseTokenURI = "ipfs://QmaqSmnjQCQKncdZFfmT4Nizii2So2zFZrM1ZVSMYn8PSD";
 
+    // 构造函数，在部署合约时执行一次
+    // 设置NFT集合名称为"LumivoltWhisper"，代号为"LVWH"
+    // 同时将合约部署者设为合约所有者
     constructor() ERC721("LumivoltWhisper", "LVWH") Ownable(msg.sender) {}
 
+    // 铸造NFT的函数，只有合约所有者可以调用(onlyOwner)
+    // recipient参数指定了NFT的接收者地址
+    // 函数返回新铸造的NFT的ID
     function mintNFT(address recipient)
         public
         onlyOwner
         returns (uint256)
     {
+        // 增加令牌ID计数器
         _nextTokenId++;
+        // 保存当前令牌ID
         uint256 newItemId = _nextTokenId;
+
+        // 安全铸造NFT并分配给接收者地址
+        // 使用_safeMint而不是_mint可以确保接收地址能够接收NFT
         _safeMint(recipient, newItemId);
+
+        // 为新NFT设置元数据URI
+        // 这将允许市场和钱包获取NFT的图像和属性
         _setTokenURI(newItemId, baseTokenURI);
 
+        // 返回新铸造的NFT的ID，方便前端或调用者跟踪
         return newItemId;
     }
 
-    // The following function is an override required by Solidity.
+    // 重写supportsInterface函数，实现ERC165标准
+    // 这个函数告诉其他合约和应用程序这个合约支持哪些接口标准
+    // 这对于NFT市场和钱包与合约交互非常重要
     function supportsInterface(bytes4 interfaceId)
         public
         view
