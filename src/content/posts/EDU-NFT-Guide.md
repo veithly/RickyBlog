@@ -157,9 +157,7 @@ contract IdeaPulseNFT is ERC721URIStorage, Ownable {
 
 1. 在Atlas ZK IDE的已部署合约界面中，找到你刚才部署的合约
 2. 展开"mintNFT"函数
-3. 输入两个参数：
-   - recipient：你的钱包地址（在MetaMask中复制）
-   - tokenURI：NFT元数据的IPFS地址，格式为`ipfs://你的元数据CID`
+3. 输入参数： recipient：你的钱包地址（在MetaMask中复制）
 4. 点击"执行"按钮，并在MetaMask中确认交易
 5. 等待交易确认，瞧！你刚刚创建了你人生中的第一个NFT！
 
