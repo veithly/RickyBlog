@@ -18,7 +18,7 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-
+import rehypeMermaid from "rehype-mermaid";
 // https://astro.build/config
 export default defineConfig({
   site: "https://fuwari.vercel.app/",
@@ -73,6 +73,7 @@ export default defineConfig({
       parseDirectiveNode,
     ],
     rehypePlugins: [
+      [rehypeMermaid, { strategy: "img-svg" }], // Moved to the beginning
       rehypeKatex,
       rehypeSlug,
       [
@@ -112,6 +113,10 @@ export default defineConfig({
         },
       ],
     ],
+    syntaxHighlight: {
+      type: 'shiki',
+      excludeLangs: ['mermaid', 'js'],
+    },
   },
   vite: {
     build: {
