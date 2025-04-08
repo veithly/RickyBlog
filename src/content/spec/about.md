@@ -13,13 +13,13 @@
 
 🌐 **角色**
 
-* IdeaPulse Founder
+* Buidl.Land Founder
 * UtopiAI CTO
 * focEliza Core Builder
 * HackQuest Senator
 * OpenBuild Contributor
 * SeeDAO SNS Holder
-* GDG & PyCon 志愿者
+* GDG & PyCon Volunteer
 
 🚀 **成就**
 

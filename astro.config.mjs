@@ -133,5 +133,8 @@ export default defineConfig({
         },
       },
     },
+    ssr: {
+      noExternal: ['mermaid-isomorphic']
+    }
   },
 });
