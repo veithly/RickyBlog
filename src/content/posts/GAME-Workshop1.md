@@ -14,6 +14,8 @@ draft: false
 
 别慌，你不是一个人！今天，咱们就来一起掀开这些"机器人背后的大脑"的神秘盖头，特别是Virtuals Protocol搞出来的G.A.M.E框架——这玩意儿简直就是给AI智能体造灵魂的乐高积木！
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vNjsrIxN39s?si=D4tbMcJ8joD_87me" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### 拆掉神秘的高墙：G.A.M.E框架到底是啥？
 
 首先，深呼吸！G.A.M.E框架，全称 **G**oal-driven **A**utonomous **M**ulti-agent **E**conomy，虽然名字带个"Game"，但它**不是**电子游戏。把它想象成一个超级牛的、模块化的"AI智能体建造工具箱"。Virtuals Protocol团队（就是视频里提到的Celeste和Joey他们那帮大佬）把它捣鼓出来，就是为了帮咱们这些开发者，能更轻松地造出那些能自己想、自己做决定、甚至还能互相合作的AI智能体。

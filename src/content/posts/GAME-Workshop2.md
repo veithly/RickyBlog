@@ -1,5 +1,5 @@
 ---
-title: 【AI Agent协作】ACP协议揭秘：让你的"链上交易助手"们组队干活！(GAME框架进阶)
+title: 【G.A.M.E Workshop 2】ACP协议揭秘：让你的Agent们组队干活！(GAME框架进阶)
 published: 2025-04-07
 updated: 2025-04-07
 description: "继GAME框架之后，深入了解ACP协议如何让独立的AI Agent（比如你的链上交易助手）互相发现、谈判和协作，构建真正的自主经济体。"
@@ -10,6 +10,8 @@ draft: false
 ---
 
 嘿，各位老铁，Ricky 又来了！还记得上回咱们聊到 AI Agent 要搞“独立经济”不当工具人吗？当时我就在想，这帮数字“小天才”凑一起，不得跟幼儿园开运动会似的，没个章法？你说巧不巧，这第二期 Workshop，Dawn 大佬就给我们揭秘了组织这帮“AI 娃”搞经济的“班规”——ACP！感觉就像给娃报了一堆兴趣班，但又怕他们互相“打架”，ACP 就是那个能让他们和平共处、还能一起搞出点名堂的“超级课程表”和“行为准则”！
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ik8nZeTattQ?si=8Ma77PGSUzBQPXJx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 揭开神秘面纱
 
