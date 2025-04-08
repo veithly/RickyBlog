@@ -4,8 +4,8 @@ published: 2025-04-07
 updated: 2025-04-07
 description: "继GAME框架之后，深入了解ACP协议如何让独立的AI Agent（比如你的链上交易助手）互相发现、谈判和协作，构建真正的自主经济体。"
 image: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MjYzNDd8MHwxfHNlYXJjaHwxfHxBSSUyMGFnZW50JTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NDQwMDY5OTd8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080'
-tags: [AI, Agent, ACP, Virtuals Protocol, Web3, Autonomous Commerce, Multi-Agent Framework, AI Agent Nation, Workshop]
-category: 'Web3探索'
+tags: [AI, Agent, GAME Framework, Virtuals Protocol]
+category: 'Virtuals Protocol'
 draft: false
 ---
 

@@ -1,16 +1,13 @@
 ---
-title: 【G.A.M.E框架入门】用GAME框架，给你的AI造个"Twitter图片分析"助手！
+title: 【G.A.M.E Workshop 1】GAME框架入门：让你和你的AI Agent一起"搞事"
 published: 2025-04-03
-updated: 2025-04-07 # Updated date
+updated: 2025-04-07
 description: '手把手教你用Virtuals Protocol的G.A.M.E框架构建AI Worker，轻松创建能分析Twitter图片内容的智能助手。特别适合Virtuals Hackathon 2025参赛者。'
 image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MjYzNDd8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwYWdlbnR8ZW58MHx8fHwxNzQzNjY2ODAxfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080'
-tags: [AI, Agent, GAME Framework, Virtuals Protocol, Hackathon, SDK, Python, Tutorial, Autonomous Agents, Twitter] # Reduced tags
-category: 'AI教程'
+tags: [AI, Agent, GAME Framework, Virtuals Protocol]
+category: 'Virtuals Protocol'
 draft: false
 ---
-
-## 【G.A.M.E框架入门】用GAME框架，给你的AI造个"Twitter图片分析"助手
-
 嘿，各位未来的AI大师和Web3探险家们！
 
 第一次听到"自主AI智能体" (Autonomous AI Agent) 是不是感觉脑袋嗡嗡的？有点像刚接触区块链那会儿，一堆问号飘过，感觉自己像在用意念控制火箭？或者像视频里说的，想让AI帮你点个披萨（没错，Agent Byte真的做到了！），但完全不知道从哪儿开始？
@@ -362,7 +359,7 @@ while True:
 
 这些例子展示了G.A.M.E框架的潜力，从社交媒体自动化到金融交易，AI Agent的应用场景超乎想象！
 
-### 萌新常见问题解答 (Q&A)
+### 常见问题解答 (Q&A)
 
 * **问：我必须写代码吗？那个GAME Cloud听起来很简单。**
   * 答：少年，清醒一点！对于这次黑客松的G.A.M.E赛道，是的，你**必须**使用G.A.M.E SDK（Python或Node.js），也就是需要写代码。GAME Cloud是个低代码平台，很方便，但这次比赛不让用在G.A.M.E赛道。拥抱代码吧，它没那么可怕！
