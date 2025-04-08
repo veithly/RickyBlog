@@ -73,7 +73,7 @@ export default defineConfig({
       parseDirectiveNode,
     ],
     rehypePlugins: [
-      [rehypeMermaid, { strategy: "img-svg" }], // Moved to the beginning
+      rehypeMermaid, // Use client-side rendering
       rehypeKatex,
       rehypeSlug,
       [
