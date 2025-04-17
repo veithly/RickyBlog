@@ -64,20 +64,16 @@ draft: false
 让我们看一个简化的Python代码示例，展示如何用G.A.M.E框架创建这个图片分析助手Worker：
 
 ```python
-from game_sdk.game.agent import Agent, WorkerConfig # Agent/WorkerConfig might not be needed if using Worker directly
+from game_sdk.game.agent import Agent, WorkerConfig
 from game_sdk.game.worker import Worker
 from game_sdk.game.custom_types import Function, Argument, FunctionResult, FunctionResultStatus
 from typing import Optional, Dict, List
 import os
 import requests
 import time
-# 假设你有一个名为 twitter_plugin_gamesdk 的库，并且安装了它
-# pip install twitter_plugin_gamesdk Pillow requests
-try:
-    from twitter_plugin_gamesdk.twitter_plugin import TwitterPlugin
-except ImportError:
-    print("Warning: twitter_plugin_gamesdk not found. Twitter functions will use mock data.")
-    TwitterPlugin = None # Set to None if import fails
+from twitter_plugin_gamesdk.twitter_plugin import TwitterPlugin
+from PIL import Image
+from io import BytesIO
 
 from PIL import Image
 from io import BytesIO
@@ -262,7 +258,7 @@ twitter_image_worker = Worker(
     instruction="获取最近提及中的图片信息，通过图像分析检查颜色和亮度。", # 更简洁的指令
     get_state_fn=get_state_fn, # 指定状态管理函数
     action_space=[screen_images_fn] # 定义工人能执行的动作
-    # model_name="gpt-4o-mini" # 可以指定LLM模型，Worker内部会用LLM决定是否以及如何调用函数
+    # model_name="DeepSeek_R1" # 可以指定LLM模型，Worker内部会用LLM决定是否以及如何调用函数
 )
 
 # --- 运行 Worker ---
