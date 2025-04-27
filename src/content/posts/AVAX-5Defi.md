@@ -41,7 +41,7 @@ draft: false
 
 ## 3. Trader Joe：雪崩 DeFi 界的瑞士军刀 🔪
 
-![Trader Joe](https://gw.ipfs-lens.dev/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
+![Trader Joe](https://gw.ipfs-lens.dev/ipfs/Qma6XdhNyxKJQbM7UKnxBrDLkKgGZj5c11zXV5UjcEspHm?filename=20250425233740122.png)
 
 啊，**Trader Joe**。如果说雪崩 DeFi 是个购物中心，那 Trader Joe 就是正中央那个啥都有的大型超市+百货商店。
 
@@ -55,8 +55,6 @@ Trader Joe 不仅能做常规的代币兑换、挖矿、质押……还不停地
 
 ## 4. Platypus Finance：让稳定币兑换丝般顺滑 🦆
 
-![Platypus Finance](https://gw.ipfs-lens.dev/ipfs/QmdfBY1NjdqNiMHmfgDVYEk4QX7Gj1KLMyW4V3uvYGUfL8?filename=20250425233822043.png)
-
 稳定币是 DeFi 世界里那些无聊但又不可或缺的“管道”。在它们之间换来换去（比如 USDC 换 USDT）本应便宜又简单，但有时候并非如此。这时候，**Platypus Finance**（鸭嘴兽金融？名字依然清奇）登场了。
 
 **它是干啥的：** Platypus 是个 **StableSwap**（稳定币互换协议），也就是说，它专门为那些价格应该差不多的币（比如各种锚定美元的稳定币）的兑换做了优化。他们的大招是：**单边流动性池**。
@@ -67,7 +65,7 @@ Trader Joe 不仅能做常规的代币兑换、挖矿、质押……还不停地
 
 ## 5. Dexalot：披着 DEX 外衣的 CEX 体验 📈
 
-![Dexalot](https://gw.ipfs-lens.dev/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
+![Dexalot](https://gw.ipfs-lens.dev/ipfs/Qma9Yu6QvwaFWnEYUFfrK9baXKHsennGafNUvwwphFSSoL?filename=20250425233857515.png)
 
 最后一位，**Dexalot**。这帮人试图弥合中心化交易所（CEX，比如币安、Coinbase）那种熟悉的操作感和去中心化交易所（DEX）无需信任的特性之间的鸿沟。
 
