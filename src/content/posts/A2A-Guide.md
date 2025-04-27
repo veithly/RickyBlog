@@ -3,7 +3,7 @@ title: 【AI前沿】拆解谷歌A2A：让AI智能体像乐高积木一样协同
 published: 2025-04-17
 updated: 2025-04-17
 description: '深入解析谷歌A2A技术如何实现AI智能体间的无缝协作'
-image: 'https://cdn.img2ipfs.com/ipfs/QmaL5RfL7bGQh3DwsvJi49KxkwXFqhn3dzxkUUREZwMkXu?filename=image.png'
+image: 'https://gw.ipfs-lens.dev/ipfs/QmaL5RfL7bGQh3DwsvJi49KxkwXFqhn3dzxkUUREZwMkXu?filename=image.png'
 tags: [AI, 智能体, 谷歌, A2A, 技术解析, 教程]
 category: 'AI教程'
 draft: false
@@ -15,7 +15,7 @@ draft: false
 
 好吧，坦白一下。你是否曾经感觉到自己像在同时处理十几个不同的应用程序和在线工具，但它们之间似乎都无法互相沟通？比如，你的日历不知道你的电子邮件任务列表，而任务列表又忽略了你的项目管理工具？这让人很沮丧，对吧？现在，想象一下这种挫败感在人工智能领域被放大了。你拥有所有这些超级聪明的 AI "智能体" —— 专门设计用于执行特定任务的软件片段 —— 但让它们 *协同工作* 就像试图驱赶猫一样困难。每个智能体都说着自己的语言，住在自己的小数字房子里，基本上对它的邻居保持沉默。直到我听说谷歌的 A2A，我的大脑才开始不再那么疼。跟着我，我会尝试解释这个东西，而不会让我们的脑袋集体爆炸。
 
-![A2A官方架构图](https://cdn.img2ipfs.com/ipfs/QmQfygYtLBffvAJiYaXAingkh9MTLV2Yjgu9HwrnC3ftf9?filename=image.png)
+![A2A官方架构图](https://gw.ipfs-lens.dev/ipfs/QmQfygYtLBffvAJiYaXAingkh9MTLV2Yjgu9HwrnC3ftf9?filename=image.png)
 
 ## 揭秘A2A：AI世界的"万能翻译官"
 

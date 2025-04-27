@@ -3,7 +3,7 @@ title: '雪崩协议 DeFi 大爆发：这 5 款DeFi 应用火得能融化雪山�
 published: 2025-04-25
 updated: 2025-04-25
 description: '告别无聊金融！老司机 Ricky 带你深入雪崩协议（Avalanche）上 5 款颠覆性的 DeFi 应用，看看它们怎么帮你“搞钱”（或者搞事情）。跟上节奏，一起发财（或者先吃土）！🍞'
-image: 'https://cdn.img2ipfs.com/ipfs/QmexJHCpZpAnWLBBqDzA4K5h5SV1ntfifvjdMLps5AGsHx?filename=20250425232815750.png'
+image: 'https://gw.ipfs-lens.dev/ipfs/QmexJHCpZpAnWLBBqDzA4K5h5SV1ntfifvjdMLps5AGsHx?filename=20250425232815750.png'
 tags: [AVAX, DeFi, 挖矿, 去中心化交易所, DEX, 加密货币, 区块链]
 category: 'DeFi 深度挖掘'
 draft: false
@@ -19,7 +19,7 @@ draft: false
 
 ## 1. Yield Yak：你的懒人（但聪明）挖矿管家 🐃
 
-![Yield Yak](https://cdn.img2ipfs.com/ipfs/QmdBj6Rp3wryxnSs9vei3Mpq8uJEQ1whqSWicuoy848BCk?filename=20250425233247480.png)
+![Yield Yak](https://gw.ipfs-lens.dev/ipfs/QmdBj6Rp3wryxnSs9vei3Mpq8uJEQ1whqSWicuoy848BCk?filename=20250425233247480.png)
 
 好，第一个登场的是 **Yield Yak**（牦牛收益？这名字就挺逗）。想象一下：你想靠手里的币生点利息（谁不想呢？），但天天手动收菜、复投，想想就头大，简直是体力活。唉。
 
@@ -29,7 +29,7 @@ draft: false
 
 ## 2. DeltaPrime：像大佬一样借钱（或者只是更莽？）🧐
 
-![DeltaPrime](https://cdn.img2ipfs.com/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
+![DeltaPrime](https://gw.ipfs-lens.dev/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
 
 接下来这位是 **DeltaPrime**。这帮兄弟瞅了瞅传统 DeFi 借贷（通常你得抵押一大堆东西才能借一点点钱——无聊！）然后说：“不行，得加点刺激的料。”
 
@@ -41,7 +41,7 @@ draft: false
 
 ## 3. Trader Joe：雪崩 DeFi 界的瑞士军刀 🔪
 
-![Trader Joe](https://cdn.img2ipfs.com/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
+![Trader Joe](https://gw.ipfs-lens.dev/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
 
 啊，**Trader Joe**。如果说雪崩 DeFi 是个购物中心，那 Trader Joe 就是正中央那个啥都有的大型超市+百货商店。
 
@@ -55,7 +55,7 @@ Trader Joe 不仅能做常规的代币兑换、挖矿、质押……还不停地
 
 ## 4. Platypus Finance：让稳定币兑换丝般顺滑 🦆
 
-![Platypus Finance](https://cdn.img2ipfs.com/ipfs/QmdfBY1NjdqNiMHmfgDVYEk4QX7Gj1KLMyW4V3uvYGUfL8?filename=20250425233822043.png)
+![Platypus Finance](https://gw.ipfs-lens.dev/ipfs/QmdfBY1NjdqNiMHmfgDVYEk4QX7Gj1KLMyW4V3uvYGUfL8?filename=20250425233822043.png)
 
 稳定币是 DeFi 世界里那些无聊但又不可或缺的“管道”。在它们之间换来换去（比如 USDC 换 USDT）本应便宜又简单，但有时候并非如此。这时候，**Platypus Finance**（鸭嘴兽金融？名字依然清奇）登场了。
 
@@ -67,7 +67,7 @@ Trader Joe 不仅能做常规的代币兑换、挖矿、质押……还不停地
 
 ## 5. Dexalot：披着 DEX 外衣的 CEX 体验 📈
 
-![Dexalot](https://cdn.img2ipfs.com/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
+![Dexalot](https://gw.ipfs-lens.dev/ipfs/QmTcHxppL3udPzr8TnVCpBbpzYjG4LbpD1Y2ShESn1iiMZ?filename=20250425233642679.png)
 
 最后一位，**Dexalot**。这帮人试图弥合中心化交易所（CEX，比如币安、Coinbase）那种熟悉的操作感和去中心化交易所（DEX）无需信任的特性之间的鸿沟。
 
