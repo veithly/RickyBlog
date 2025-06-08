@@ -114,7 +114,7 @@ sequenceDiagram
     Agent-->>User: "报告：套利成功，收益已入账"
 ```
 
-## **SpoonOS vs. 主流框架 (以ElizaOS为例)：两种文明的演进路径**
+## **SpoonOS vs. ElizaOS：两种文明的演进路径**
 
 如果说SpoonOS是在精心设计一座未来都市，那么像ElizaOS这样的主流框架，则更像是在为全世界的建筑师提供一套最好用的“乐高积木”。
 
