@@ -87,7 +87,7 @@ print(prompt_zh.format(text="LangChain is a framework for developing application
 3. 在模型返回结果后，自动解析输出的JSON字符串，并填充到Pydantic对象中。
 
 ```python
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
 # 1. 定义你希望输出的数据结构
@@ -265,7 +265,7 @@ graph TD
 from langchain_community.document_loaders import PyPDFLoader
 
 # lazy_load 返回一个迭代器，更节省内存
-loader = PyPDFLoader("https://arxiv.org/pdf/2306.06031v2.pdf", extract_images=False)
+loader = PyPDFLoader("https://arxiv.org/pdf/2505.15088.pdf", extract_images=False)
 lazy_docs = loader.lazy_load()
 
 # 只有在迭代时才会真正加载每一页
