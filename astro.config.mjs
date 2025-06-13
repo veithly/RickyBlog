@@ -21,7 +21,7 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import rehypeMermaid from "rehype-mermaid";
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fuwari.vercel.app/",
+  site: "https://rickyacc.me/",
   base: "/",
   trailingSlash: "always",
   integrations: [
