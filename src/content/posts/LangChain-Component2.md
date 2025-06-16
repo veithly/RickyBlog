@@ -166,6 +166,72 @@ sequenceDiagram
 
 *图2: Agent 的“思考-行动-观察”循环 (ReAct 框架)*
 
+### **代码实战：构建一个会“上网冲浪”的 Agent**
+
+光说不练假把式，咱们这就动手搞一个能用 Tavily 搜索引擎来回答实时问题的 Agent。
+
+在最新版的 LangChain 中，创建一个 Agent 通常遵循以下步骤：
+
+1. **定义工具 (Tools)**：准备好 Agent 能使用的武器。
+2. **创建提示 (Prompt)**：从 Hub 拉取一个标准模板，告诉 Agent 如何思考和使用工具。
+3. **创建 Agent**：使用 `create_react_agent` 这样的工厂函数，把模型、工具和提示“粘”在一起。
+4. **创建执行器 (AgentExecutor)**：这是驱动 Agent 跑起来的引擎。
+
+```python
+# 首先，确保你已经安装了 tavily-python
+# pip install -U tavily-python
+
+from langchain_openai import ChatOpenAI
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain import hub
+from langchain.agents import create_react_agent, AgentExecutor
+
+# 1. 准备好模型和工具
+# 确保你已经设置了 OPENAI_API_KEY 和 TAVILY_API_KEY 环境变量
+llm = ChatOpenAI(model="gpt-4o")
+tools = [TavilySearchResults(max_results=1)]
+
+# 2. 从 LangChain Hub 拉取一个预设的 ReAct 提示模板
+# 这个模板专门用于指导 Agent 如何进行“思考-行动-观察”循环
+prompt = hub.pull("hwchase17/react")
+
+# 3. 创建 Agent
+# 这个函数将模型、工具和提示绑定在一起，定义了 Agent 的核心逻辑
+agent = create_react_agent(llm, tools, prompt)
+
+# 4. 创建 Agent 执行器
+# verbose=True 可以让我们清楚地看到 Agent 的每一步思考过程
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+# 5. 跑起来！
+question = "现在是2025年6月，请问 LangChain 的最新稳定版本是多少？它的主要作者是谁？"
+result = agent_executor.invoke({"input": question})
+
+print("\n最终答案：")
+print(result["output"])
+```
+
+当你运行上面的代码时，`verbose=True` 会让你在控制台看到类似这样的输出：
+
+```text
+> Entering new AgentExecutor chain...
+
+Thought: The user is asking two questions: the latest stable version of LangChain in June 2025 and who its main author is. I need to search for this information. I will start by searching for "LangChain latest stable version".
+Action: tavily_search_results_json
+Action Input: {"query": "LangChain latest stable version June 2025"}
+Observation: [...] (Tavily返回的搜索结果)
+Thought: I have found the latest version. Now I need to find the main author. I will search for "LangChain main author".
+Action: tavily_search_results_json
+Action Input: {"query": "LangChain main author"}
+Observation: [...] (Tavily返回的搜索结果，其中提到 Harrison Chase)
+Thought: I have all the information needed to answer the user's question.
+Final Answer: LangChain的最新稳定版本是 [版本号]，它的主要作者是 Harrison Chase。
+
+> Finished chain.
+```
+
+看到了吗？Agent 像一个真正的人类研究员一样，自己分析问题、拆解任务、使用工具、整合信息，最后得出答案。这就是 Agent 的魅力所在！
+
 ### **代理的真正价值：从“死板”到“灵活”**
 
 链和代理最根本的区别就在于 **控制流**：
