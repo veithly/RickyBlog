@@ -14,12 +14,14 @@ const className = Astro.props.class
 </div>
 
 <script>
+  import mermaid from 'mermaid';
+
   const observer = new MutationObserver(addPreCopyButton);
   observer.observe(document.body, { childList: true, subtree: true });
-  
+
   function addPreCopyButton() {
     observer.disconnect();
-    
+
     let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (let codeBlock of codeBlocks) {
@@ -58,7 +60,110 @@ const className = Astro.props.class
         }, 1000);
       });
     }
-    
+
     observer.observe(document.body, { childList: true, subtree: true });
+
+    // Initialize and process Mermaid diagrams
+    initializeMermaid();
+  }
+
+  // Enhanced Mermaid initialization with better text wrapping support
+  function initializeMermaid() {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: document.documentElement.classList.contains('dark') ? 'dark' : 'base',
+      themeVariables: {
+        primaryColor: 'var(--primary)',
+        primaryTextColor: 'var(--text-primary)',
+        primaryBorderColor: 'var(--glass-border)',
+        lineColor: 'var(--primary)',
+        secondaryColor: 'var(--card-glass-bg)',
+        tertiaryColor: 'var(--glass-bg)',
+        background: 'var(--card-bg)',
+        mainBkg: 'var(--card-glass-bg)',
+        secondBkg: 'var(--glass-bg)',
+      },
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis',
+        nodeSpacing: 50,
+        rankSpacing: 50,
+        padding: 15,
+        wrappingWidth: 200,
+      },
+      sequence: {
+        useMaxWidth: true,
+        wrap: true,
+        width: 150,
+      },
+      fontSize: 14,
+      fontFamily: 'inherit',
+    });
+
+    processMermaidDiagrams();
+  }
+
+  function processMermaidDiagrams() {
+    const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+
+    mermaidBlocks.forEach((block, index) => {
+      const pre = block.parentElement;
+      if (!pre) return;
+
+      // Get the mermaid code and process it for better text wrapping
+      let code = block.textContent || '';
+
+      // Enhance code for better text wrapping using markdown strings
+      code = code
+        // Convert HTML line breaks to proper line breaks
+        .replace(/<br\s*\/?>/gi, '\n')
+        // Wrap long text in backticks for auto-wrapping (Mermaid v10.1.0+ feature)
+        .replace(/([^`])"([^"]{25,})"([^`])/g, '$1"`$2`"$3')
+        // Handle Chinese/Unicode text
+        .replace(/([^`])([^\x00-\x7F]{15,})([^`])/g, '$1"`$2`"$3');
+
+      // Create container with glass effect
+      const container = document.createElement('div');
+      container.className = 'mermaid-container glass-card p-6 my-6 rounded-xl overflow-x-auto';
+      container.style.cssText = `
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        box-shadow: 0 8px 32px var(--glass-shadow);
+      `;
+
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = code;
+
+      container.appendChild(mermaidDiv);
+      pre.parentNode?.replaceChild(container, pre);
+    });
+
+    // Render all mermaid diagrams
+    mermaid.run();
+  }
+
+  // Listen for theme changes and re-initialize Mermaid
+  const themeObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        initializeMermaid();
+      }
+    });
+  });
+
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+
+  // Re-process on page navigation (for SPA)
+  if (window.swup) {
+    window.swup.hooks.on('content:replace', () => {
+      initializeMermaid();
+    });
   }
 </script>

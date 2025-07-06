@@ -4,15 +4,93 @@
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
     }
-    h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
+
+    /* Frosted Glass Components */
+    .glass-card {
+        @apply rounded-[var(--radius-large)] overflow-hidden transition-all duration-300 ease-out;
+        background: var(--card-glass-bg);
+        border: 1px solid var(--card-glass-border);
+        -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        box-shadow: 0 8px 32px var(--glass-shadow);
+        transform: translateY(0);
+    }
+
+    .glass-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 48px var(--glass-shadow);
+        border-color: var(--primary);
+    }
+
+    .glass-panel {
         @apply transition;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        box-shadow: 0 8px 32px var(--glass-shadow);
+    }
+
+    .glass-navbar {
+        @apply transition;
+        background: var(--glass-bg);
+        border-bottom: 1px solid var(--glass-border);
+        -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        box-shadow: 0 4px 16px var(--glass-shadow);
+    }
+    h1, h2, h3, h4, h5, h6, p, a, span, li, ul, ol, blockquote, code, pre, table, th, td, strong {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    /* Enhanced Typography */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-medium tracking-tight;
+        line-height: 1.2;
+    }
+
+    h1 { @apply text-4xl md:text-5xl; }
+    h2 { @apply text-3xl md:text-4xl; }
+    h3 { @apply text-2xl md:text-3xl; }
+    h4 { @apply text-xl md:text-2xl; }
+    h5 { @apply text-lg md:text-xl; }
+    h6 { @apply text-base md:text-lg; }
+
+    p {
+        @apply leading-relaxed;
+        line-height: 1.7;
+    }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 768px) {
+        .glass-card {
+            margin: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        .glass-navbar {
+            -webkit-backdrop-filter: blur(8px) saturate(150%);
+            backdrop-filter: blur(8px) saturate(150%);
+        }
+    }
+
+    /* Improved spacing and layout */
+    .content-spacing > * + * {
+        margin-top: 1.5rem;
+    }
+
+    .content-spacing h2 + *,
+    .content-spacing h3 + *,
+    .content-spacing h4 + * {
+        margin-top: 1rem;
     }
     .card-shadow {
         @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)]
     }
     .expand-animation {
-        @apply relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
+        @apply relative before:ease-out before:transition-all before:duration-300 active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0
         before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10
+        transform-gpu hover:scale-[1.02] active:scale-[0.98]
     }
     .link {
         @apply transition rounded-md p-1 -m-1 expand-animation;
@@ -21,7 +99,12 @@
         @apply transition rounded-md p-1.5 -m-1.5 expand-animation;
     }
     .float-panel {
-        @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden bg-[var(--float-panel-bg)] transition shadow-xl dark:shadow-none
+        @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden transition;
+        background: var(--float-panel-bg);
+        border: 1px solid var(--glass-border);
+        -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+        box-shadow: 0 8px 32px var(--glass-shadow);
     }
     .float-panel-closed {
         @apply -translate-y-1 opacity-0 pointer-events-none

@@ -1,0 +1,194 @@
+---
+interface Props {
+  code: string;
+  class?: string;
+}
+
+const { code, class: className } = Astro.props;
+---
+
+<div class={`mermaid-container ${className || ''}`}>
+  <div class="mermaid-diagram" data-mermaid={code}>
+    {code}
+  </div>
+</div>
+
+<style>
+  .mermaid-container {
+    @apply w-full overflow-x-auto my-6;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+    backdrop-filter: blur(var(--glass-backdrop-blur)) saturate(var(--glass-backdrop-saturate));
+    box-shadow: 0 8px 32px var(--glass-shadow);
+  }
+
+  .mermaid-diagram {
+    @apply flex justify-center items-center min-h-[200px];
+  }
+
+  /* Enhanced Mermaid styling for better text wrapping */
+  .mermaid-container :global(.mermaid) {
+    width: 100%;
+    height: auto;
+  }
+
+  .mermaid-container :global(.node rect),
+  .mermaid-container :global(.node circle),
+  .mermaid-container :global(.node ellipse),
+  .mermaid-container :global(.node polygon) {
+    fill: var(--card-glass-bg) !important;
+    stroke: var(--glass-border) !important;
+    stroke-width: 2px !important;
+  }
+
+  .mermaid-container :global(.node .label) {
+    color: var(--text-primary) !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  .mermaid-container :global(.edgePath .path) {
+    stroke: var(--primary) !important;
+    stroke-width: 2px !important;
+  }
+
+  .mermaid-container :global(.edgeLabel) {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .mermaid-container {
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .mermaid-container :global(.node .label) {
+      font-size: 12px !important;
+    }
+  }
+</style>
+
+<script>
+  import mermaid from 'mermaid';
+
+  // Enhanced Mermaid configuration for better text handling
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: 'var(--primary)',
+      primaryTextColor: 'var(--text-primary)',
+      primaryBorderColor: 'var(--glass-border)',
+      lineColor: 'var(--primary)',
+      secondaryColor: 'var(--card-glass-bg)',
+      tertiaryColor: 'var(--glass-bg)',
+      background: 'var(--card-bg)',
+      mainBkg: 'var(--card-glass-bg)',
+      secondBkg: 'var(--glass-bg)',
+      tertiaryBkg: 'var(--page-bg)',
+    },
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 50,
+      rankSpacing: 50,
+      padding: 15,
+      // Enable text wrapping
+      wrappingWidth: 200,
+    },
+    sequence: {
+      useMaxWidth: true,
+      wrap: true,
+      width: 150,
+    },
+    gantt: {
+      useMaxWidth: true,
+    },
+    journey: {
+      useMaxWidth: true,
+    },
+    gitGraph: {
+      useMaxWidth: true,
+    },
+    // Enable markdown strings for better text formatting
+    markdownAutoWrap: true,
+    fontSize: 14,
+    fontFamily: 'inherit',
+  });
+
+  // Function to process diagrams with better text wrapping
+  function processMermaidDiagrams() {
+    const diagrams = document.querySelectorAll('.mermaid-diagram[data-mermaid]');
+    
+    diagrams.forEach((diagram, index) => {
+      const code = diagram.getAttribute('data-mermaid');
+      if (code) {
+        // Process the code to handle multi-line text better
+        const processedCode = code
+          // Convert HTML-style line breaks to proper markdown strings
+          .replace(/<br\s*\/?>/gi, '\n')
+          // Wrap long text in markdown strings for auto-wrapping
+          .replace(/([^`])"([^"]{30,})"([^`])/g, '$1"`$2`"$3')
+          // Handle Chinese/Unicode text wrapping
+          .replace(/([^`])([^\x00-\x7F]{20,})([^`])/g, '$1"`$2`"$3');
+        
+        const id = `mermaid-${index}-${Date.now()}`;
+        diagram.id = id;
+        diagram.textContent = processedCode;
+        
+        // Render the diagram
+        mermaid.render(id + '-svg', processedCode).then(({ svg }) => {
+          diagram.innerHTML = svg;
+        }).catch((error) => {
+          console.error('Mermaid rendering error:', error);
+          diagram.innerHTML = `<div class="error">Failed to render diagram: ${error.message}</div>`;
+        });
+      }
+    });
+  }
+
+  // Process diagrams on page load
+  document.addEventListener('DOMContentLoaded', processMermaidDiagrams);
+
+  // Re-process diagrams when content changes (for SPA navigation)
+  if (window.swup) {
+    window.swup.hooks.on('content:replace', processMermaidDiagrams);
+  }
+
+  // Theme change handler
+  function updateMermaidTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark' : 'base';
+    
+    mermaid.initialize({
+      ...mermaid.getConfig(),
+      theme: theme,
+    });
+    
+    // Re-render all diagrams with new theme
+    processMermaidDiagrams();
+  }
+
+  // Listen for theme changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        updateMermaidTheme();
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+</script>

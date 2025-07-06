@@ -15,10 +15,12 @@ import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
+import { MermaidComponent } from "./src/plugins/rehype-component-mermaid.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-import rehypeMermaid from "rehype-mermaid";
+import { rehypeMermaidCustom } from "./src/plugins/rehype-mermaid-custom.mjs";
+// import rehypeMermaid from "rehype-mermaid"; // Using custom Mermaid component instead
 // https://astro.build/config
 export default defineConfig({
   site: "https://rickyacc.me/",
@@ -73,7 +75,7 @@ export default defineConfig({
       parseDirectiveNode,
     ],
     rehypePlugins: [
-      rehypeMermaid, // Use client-side rendering
+      rehypeMermaidCustom, // Custom Mermaid component with better text wrapping
       rehypeKatex,
       rehypeSlug,
       [
@@ -81,6 +83,7 @@ export default defineConfig({
         {
           components: {
             github: GithubCardComponent,
+            MermaidDiagram: MermaidComponent,
             note: (x, y) => AdmonitionComponent(x, y, "note"),
             tip: (x, y) => AdmonitionComponent(x, y, "tip"),
             important: (x, y) => AdmonitionComponent(x, y, "important"),
