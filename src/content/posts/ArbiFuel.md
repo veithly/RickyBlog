@@ -403,13 +403,11 @@ ArbiFuel让我重新看到了希望。虽然大家依然需要继续优化Gas费
 
 ### 参考资料
 
+[ArbiFuel Is Live: Arbitrum Builders, Claim Your Gas Fee Sponsorship](https://arbitrumfoundation.medium.com/arbifuel-is-live-arbitrum-builders-claim-your-gas-fee-sponsorship-cd76efa0b57c)
+
 [Account Abstraction Gas Fees Explained: Paymasters, Bundlers, and Cost Optimization](https://blog.thirdweb.com/account-abstraction-gas-fees-paymasters-bundlers-cost-optimization/)
 
 [What are Paymasters? (ERC-4337) - Alchemy](https://www.alchemy.com/overviews/what-is-a-paymaster)
-
-[Arbitrum Foundation unveils first grant program for ecosystem growth](https://cryptotvplus.com/2023/07/arbitrum-foundation-unveils-first-grant-program-for-ecosystem-growth/)
-
-[Ultimate Arbitrum Smart Contract Guide 2024 | Build Scalable DApps](https://www.rapidinnovation.io/post/how-to-build-and-deploy-a-smart-contract-on-arbitrum)
 
 [Arbitrum, Optimistic Rollups, and Nitro Stack: Ethereum L2 Stack Made Easy](https://blog.quicknode.com/arbitrum-nitro-explained/)
 
