@@ -331,7 +331,9 @@ function initCustomScrollbar() {
 function showBanner() {
 	const banner = document.getElementById('banner')
 	if (!banner) {
-		console.error('Failed to find the banner element')
+		if (enableBanner) {
+			console.error('Failed to find the banner element')
+		}
 		return
 	}
 	banner.classList.remove('opacity-0', 'scale-105')
@@ -342,7 +344,9 @@ function init() {
 	loadTheme();
 	loadHue();
 	initCustomScrollbar();
-	showBanner();
+	if (enableBanner) {
+		showBanner();
+	}
 }
 
 /* Load settings when entering the site */
