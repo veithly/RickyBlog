@@ -5,7 +5,7 @@ updated: 2025-09-18
 description: "Google的Agent Payments Protocol (AP2)不是简单的支付更新，而是AI经济自主权的里程碑。它解决了信任鸿沟，为未来的Agent经济铺设金融铁轨，重新定义了AI与人类经济的互动方式。"
 image: "https://s2.loli.net/2025/09/18/C5ZQkJHavOwec8B.png"
 tags: [AI, 支付协议, Google, Agent经济, 区块链]
-category: "技术深度分析"
+category: "AI科普"
 draft: false
 lang: "zh-CN"
 ---
